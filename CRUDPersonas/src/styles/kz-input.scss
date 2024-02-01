@@ -1,0 +1,46 @@
+@import 'variables';
+@import 'responsive';
+
+.kz-input{
+  position: relative;
+  border-radius: 12px;
+  border: 1.5px solid rgb(183, 183, 183);
+  padding: 12px 12px;
+  font-size: 14px;
+  &::-webkit-input-placeholder {
+    color: rgb(183, 183, 183);
+  }
+  width: 100%;
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: initial;
+  background-position-y: center;
+  background-position-x: 12px;
+  font-family: $font-family;
+  color: $color-seven;
+  background-color: white;
+  box-shadow: 0 0 1px 1px transparent;
+  &:focus {
+    outline: 0;
+    border: 1.5px solid transparent !important;
+    box-shadow: 0 0 2px 2px #1f85b1;
+    background-color: white;
+  }
+}
+
+.kz-input--icon{
+  position: relative;
+  color:rgb(183, 183, 183);
+  font-size: 18px;
+  & > input[type='text'],
+  input[type='password'],
+  select {
+    padding-right: 18px!important;
+  }
+  i{
+    border: 0;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+  }
+}

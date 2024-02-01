@@ -1,0 +1,13 @@
+@import 'variables';
+@import 'responsive';
+
+.kz-link{
+    padding: 0;
+    font-size: 14px;
+    font-family: $font-family;
+    color: $color-one;
+    cursor: pointer;
+    &:hover{
+      color: $color-six;
+    }
+  }

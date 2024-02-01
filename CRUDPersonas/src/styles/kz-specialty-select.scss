@@ -1,0 +1,69 @@
+@import 'variables';
+@import 'responsive';
+
+.kz-specialty-select {
+    .ng-select {
+      border-radius: 12px;
+      border: 2px solid rgb(183, 183, 183);
+      padding: 8px;
+      width: 400px; 
+      .ng-dropdown-panel {
+        padding: 16px;
+        background-color: white;
+        box-shadow: 0px 0px 16px #cecece;
+        border-radius: 12px; 
+        position: absolute;
+        left: 0;
+        top: 3.8rem;
+        .scroll-host{
+          height: auto;
+          max-height: 300px !important;
+          overflow-y: auto !important;
+          &::-webkit-scrollbar:vertical{
+            display: block !important;
+            width: 10px !important;
+          }
+          &::-webkit-scrollbar-track:vertical{
+            border-radius: 4px !important;
+            background-color:  rgba(184, 197, 210, 0.32) !important;
+            width: 10px !important;
+          }
+          &::-webkit-scrollbar-thumb:vertical{
+            border-radius: 4px !important;
+            background-color: $color-one !important;
+            width: 10px !important;
+          }
+          &::-webkit-scrollbar-button{
+            border-radius: 6px !important;
+            background-color: rgba(184, 197, 210, 0.24) !important;
+            display: none;
+          }
+          .ng-option{
+            margin-bottom: 4px;
+            padding: 8px 12px;
+            border-radius: 14px;
+            &:hover{
+              background-color: rgba(108, 160, 239, 0.1764705882);
+            }
+            &:last-child{
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+      .option-image {
+        width: 40px; 
+        height: 40px; 
+        margin-right: 8px;
+      }
+      .ng-clear-wrapper{
+        width: 20px !important;
+        cursor: pointer;
+        margin-top: auto;
+        margin-bottom: auto;
+        &:hover{
+          color: $color-one;
+        }
+      }
+    }
+  }

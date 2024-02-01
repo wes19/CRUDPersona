@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'responsive';
+
+.modal-content{
+    border: 0;
+    border-radius: 12px;
+    .modal-header{
+        background-color: $color-two;
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
+        width: 100%;
+        margin-top: -2px;
+        .modal-title{
+            color: white;
+        }
+    }
+}
+.kz-btn-close{
+    padding: 4px 8px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: white;
+    border: none;
+    border-radius: 100%;
+    background-color: transparent;
+    &:hover{
+        background-color: #7aa7be99;
+    }
+}

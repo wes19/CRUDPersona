@@ -1,0 +1,39 @@
+@import 'variables';
+@import 'responsive';
+
+.kz-tabs {
+  .kz-tab-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    text-align: center;
+    .kz-tab {
+      display: inline-block;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: $font-family;
+      text-align: center;
+      &:hover{
+        color: $color-one;
+      }
+      &.active {
+        color: $color-six;
+        border-bottom: 3px solid $color-six;
+      }
+    }
+  }
+  .kz-tab-content {
+    padding: 10px;
+    margin-top: 10px;
+    
+    .kz-tab-panel {
+      display: none;
+      
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

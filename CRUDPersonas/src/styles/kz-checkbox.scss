@@ -1,0 +1,48 @@
+@import 'variables';
+@import 'responsive';
+
+.kz-checkbox {
+  position: relative;
+
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked + label {
+      background-color: $color-two;
+      border: 1px solid $color-two;
+      &::after {
+        content: "\2713"; // Unicode character for checkmark
+        font-size: 13px;
+        color: $color-ten;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $color-seven;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid $color-two;
+        &::after {
+            content: "\2713";
+            font-size: 13px;
+            color: $color-two;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@mixin media ($media) {
+  @if $media == mobile-large {  
+    @media only screen and (max-width: 992px) { @content; }  
+  }
+  @if $media == mobile-ultra-small {  
+    @media only screen and (min-width: 330px) { @content; }  
+  }
+  @if $media == mobile-small {  
+    @media only screen and (min-width: 576px) { @content; }  
+  }
+  @if $media == mobile {  
+    @media only screen and (max-width: 768px) { @content; }  
+  } 
+  @if $media == tablet { 
+    @media only screen and (min-width: 768px) { @content; }  
+  } 
+  @else if $media == screen-1{  
+    @media only screen and (min-width: 992px) { @content; }  
+  }
+  @else if $media == screen-2 {  
+    @media only screen and (min-width: 1200px) { @content; }  
+  }  
+  @else if $media == screen-3 {  
+    @media only screen and (min-width: 1440px) { @content; }  
+  } 
+  @else if $media == screen-4 {  
+    @media only screen and (min-width: 1600px) { @content; }  
+  } 
+  @else if $media == screen-5 {  
+    @media only screen and (min-width: 2250px) { @content; }  
+  }   
+}

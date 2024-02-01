@@ -1,0 +1,97 @@
+@import 'variables';
+@import 'responsive';
+
+  .kz-img{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+    object-fit: cover;
+  }
+
+  .kz-img--circle{
+    border-radius: 50%;
+  }
+  .kz-img--small {
+    height: 32px;
+    width: 32px;
+  }
+  .kz-img--sm {
+    height: 40px;
+    width: 40px;
+  }
+  .kz-img--lg {
+    height: 50px;
+    width: 50px;
+  }
+  .kz-img--m {
+    height: 80px;
+    width: 80px;
+  }
+  .kz-img--l {
+    height: 100px;
+    width: 100px;
+  }
+  .kz-img--x {
+    height: 150px;
+    width: 150px;
+  }
+  .kz-img--xl {
+    height: 200px;
+    width: 200px;
+  }
+
+  .kz-form--img{
+    position: relative;
+    img{
+      position: relative;
+    }
+    .kz-actions{
+      display: none;
+      background-color: #949fa5c7;
+      position: absolute;
+      top: 0;
+      width: 150px;
+      padding: 16px;
+      justify-content: space-between;
+      .kz-edit-action{
+        i{
+          color: white;
+          font-size: 18px;
+          cursor: pointer;
+          &:hover{
+            font-size: 20px;
+            color: #006aff;
+          }
+        }
+        input{
+          display: none;
+        }
+      }
+      .kz-delete-action{
+        i{
+          color: white;
+          font-size: 18px;
+          cursor: pointer;
+          &:hover{
+            font-size: 20px;
+            color: #006aff;
+          }
+        }
+      }
+    }
+    &:hover{
+      .kz-actions{
+        display: flex;
+      }
+    }
+  }
+  
+  .kz-img-upload{
+    position: relative;
+  }
+
+  .kz-img-table{
+    width: auto;
+    height: 36px;
+  }

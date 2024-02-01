@@ -1,0 +1,158 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "CRUDPersonas": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/crudpersonas",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles/contenedores.scss",
+              "src/styles/utilidades.scss",
+              "src/styles/responsive.scss",
+              "src/styles/variables.scss",
+              "src/styles/style.scss",
+              "src/styles/kz-navbar.scss",
+              "src/styles/kz-input.scss",
+              "src/styles/kz-button.scss",
+              "src/styles/kz-card.scss",
+              "src/styles/kz-sidebar.scss",
+              "src/styles/kz-table.scss",
+              "src/styles/kz-img.scss",
+              "src/styles/kz-calendar.scss",
+              "src/styles/kz-cal-ausencia.scss",
+              "src/styles/kz-specialty-select.scss",
+              "src/styles/kz-chip.scss",
+              "src/styles/kz-tabs.scss",
+              "src/styles/kz-form-column.scss",
+              "src/styles/kz-link.scss",
+              "src/styles/kz-modal.scss",
+              "src/styles/kz-switch.scss",
+              "src/styles/kz-checkbox.scss"
+            ],
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "CRUDPersonas:build:production"
+            },
+            "development": {
+              "buildTarget": "CRUDPersonas:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "CRUDPersonas:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles/contenedores.scss",
+              "src/styles/utilidades.scss",
+              "src/styles/responsive.scss",
+              "src/styles/variables.scss",
+              "src/styles/style.scss",
+              "src/styles/kz-navbar.scss",
+              "src/styles/kz-input.scss",
+              "src/styles/kz-button.scss",
+              "src/styles/kz-card.scss",
+              "src/styles/kz-sidebar.scss",
+              "src/styles/kz-table.scss",
+              "src/styles/kz-img.scss",
+              "src/styles/kz-calendar.scss",
+              "src/styles/kz-cal-ausencia.scss",
+              "src/styles/kz-specialty-select.scss",
+              "src/styles/kz-chip.scss",
+              "src/styles/kz-tabs.scss",
+              "src/styles/kz-form-column.scss",
+              "src/styles/kz-link.scss",
+              "src/styles/kz-modal.scss",
+              "src/styles/kz-switch.scss",
+              "src/styles/kz-checkbox.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "d55565b8-9848-497a-bdfa-3ab5c07a9745"
+  }
+}

@@ -1,0 +1,84 @@
+@import "variables";
+@import "responsive";
+
+.kz-angle-icon {
+  font-size: 1.2rem;
+  transition: transform 0.8s ease;
+  margin-left: auto;
+  color: black;
+  &.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.8s ease;
+    color: black;
+  }
+}
+
+.kz-error-text {
+  color: red;
+  background-color: transparent;  
+  border: none;
+  margin-top: 5px;
+}
+
+.kz-is-invalid {
+  border-color: red !important;
+}
+
+.kz-chip-estado-green{
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 10px 22px;
+  background-color: transparent;
+  color: $color-thirteen;
+  font-weight: bold;
+}
+
+.kz-chip-estado-red{
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 10px 22px;
+  background-color: transparent;
+  color: $color-eigth;
+  font-weight: bold;
+}
+
+.kz-state-animation {
+  display: inline-block;
+  border-radius: 50%;
+  color: #0B9C3C;
+  animation: parpadeo 1s infinite;
+}
+
+@keyframes parpadeo {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.kz-chip-estado-archivar {
+  padding: 4px 8px;
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: $font-family;
+}
+
+
+.dias-container {
+  display: flex;
+
+  .dia {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .cuadro-verde {
+    background-color: green;
+    color: white; /* Texto en blanco para mejorar visibilidad en verde */
+  }
+}
