@@ -1,8 +1,8 @@
 import {
   DomSanitizer
-} from "./chunk-IPSF5LFE.js";
-import "./chunk-5LOGXLIO.js";
-import "./chunk-JPN5AOHM.js";
+} from "./chunk-IYTGPFYP.js";
+import "./chunk-AJQMK7VO.js";
+import "./chunk-QOLFAWDE.js";
 import {
   Component,
   Directive,
@@ -30,11 +30,10 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef,
   ɵɵsanitizeHtml
-} from "./chunk-2JNEIYKB.js";
-import "./chunk-WSA2QMXP.js";
+} from "./chunk-Y5B6T3PN.js";
 import "./chunk-WKYGNSYM.js";
 
-// node_modules/@fortawesome/fontawesome-svg-core/index.mjs
+// ../../node_modules/@fortawesome/fontawesome-svg-core/index.mjs
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
   if (Object.getOwnPropertySymbols) {
@@ -2590,7 +2589,7 @@ var layer = api.layer;
 var text = api.text;
 var counter = api.counter;
 
-// node_modules/@fortawesome/angular-fontawesome/fesm2022/angular-fontawesome.mjs
+// ../../node_modules/@fortawesome/angular-fontawesome/fesm2022/angular-fontawesome.mjs
 var _c0 = ["*"];
 var faWarnIfIconDefinitionMissing = (iconSpec) => {
   throw new Error(`Could not find icon with iconName=${iconSpec.iconName} and prefix=${iconSpec.prefix} in the icon library.`);

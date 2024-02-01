@@ -1,71 +1,78 @@
 <div class="kz-container-full">
     <div class="kz-d-flex kz-flex-vertical-center kz-flex-horizontal-center kz-gap--l kz-mb--4">
-        <div class="kz-input--icon kz-w--40">
-          <input class="kz-input" type="text" placeholder="Buscar">
-          <i class="bi bi-search"></i>
-        </div>
-      
+      <button class="kz-button kz-button--primary kz-border-radius--l ml--2" (click)="modalCrear(ModalCrear)">Crear</button>
         <div class="kz-btn-radio--group">
-          <div class="kz-btn-radio__item">
+          <div class="kz-btn-radio__item" (click)="btnActivo = 'kamba'">
             <input type="radio" id="grid" name="view" checked>
             <label for="grid">
               <i class="bi bi-grid"></i>
             </label>
           </div>
-          <div class="kz-btn-radio__item">
+          <div class="kz-btn-radio__item" (click)="btnActivo = 'list'">
             <input type="radio" id="list" name="view" atr="1">
             <label for="list">
               <i class="bi bi-list-ul"></i>
             </label>
           </div>
         </div>
+        <div class="">
+          <button class="kz-button kz-button--cancel kz-border-radius--l ml--2" [routerLink]="['/']">Salir</button>
+        </div>
     </div>
+   
     
     <!--Cards--> 
-    <div class="kz-kamba">
+    <div class="kz-kamba" [class.active]="btnActivo == 'kamba'">
         <div class="kz-d-grid kz-col-s5--4 kz-col-s3--3 kz-col-s2--2 kz-col-s1--2 kz-col-t--2 kz-col--1 kz-gap--xl kz-mt--4">
-          <div class="kz-card">
+          <div class="kz-card" *ngFor="let persona of personas">
             <div class="kz-card__body">
               <div class="kz-d-flex kz-flex-vertical-center kz-gap--l">
-                <img class="kz-img kz-img--circle kz-img--l" src="../assets/img/icons/user.svg" alt="Card image cap">
+                <img class="kz-img kz-img--circle kz-img--l" src="../assets/img/user.svg" alt="Card image cap">
                 <div class="kz-d-flex kz-dir-vertical kz-gap--xs">
-                  <label class="kz-txt--l kz-font-bold">Nombre</label>
-                  <label class="kz-txt--m">Puesto</label> 
-                  <label class="kz-txt--m">celular</label>
-                  <span class="kz-chip kz-chip--green"><i class="bi bi-circle-fill kz-state-animation"></i> Disponible</span>
+                  <label class="kz-txt--l kz-font-bold">{{persona.nombres}} {{persona.apellidos}}</label>
+                  <label class="kz-txt--m"><td>{{persona.numero_documento}}</td></label>
+                  <span [ngClass]="{
+                    'kz-chip--green': persona.estado === 'Activo',
+                    'kz-chip--red': persona.estado === 'Inactivo',
+                    'kz-state-animation-green': persona.estado === 'Activo',
+                    'kz-state-animation-red': persona.estado === 'Inactivo'}">
+                    <i class="bi bi-circle-fill"></i> {{persona.estado}}
+                  </span>              
                 </div>
               </div>
             </div>
             <div class="kz-card__footer">
-              <button class="kz-button kz-button--primary kz-border-radius--l"><i class="bi bi-pencil-square"></i> Detalles</button>
+              <button class="kz-button kz-button--primary kz-border-radius--l" (click)="modalEditar(ModalEditar, persona)"><i class="bi bi-pencil-square"></i> Detalles</button>
             </div>
           </div>  
         </div>
     </div>
       
     <!--Table--> 
-    <div>
+    <div class="kz-d-none--table" [class.active]="btnActivo == 'list'">
       <div class="kz-table-content">
         <table class="kz-table">
           <thead class="kz-table__head">
             <tr>
-                <th>Nombre Completo</th>
-                <th>Puesto Laboral</th>
-                <th>Célular Laboral</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Tipo Documento</th>
+                <th>Número Documento</th>
                 <th>Estado</th>
             </tr>
           </thead>
           <tbody class="kz-table__body">
-            <tr>
-                <td>Nombre</td>
-                <td>puesto</td>
-                <td>celular</td>
-                <td>Disponible</td>
-                <td>
-                    <a class="kz-text-decoration-none kz-link"> Detalles</a>
-                </td>
-                <td>
-                    <button class="kz-button kz-button--cancel kz-border-radius--l"><i class="bi bi-trash-fill"></i> Eliminar</button>
+            <tr *ngFor="let persona of personas">
+                <td>{{persona.nombres}}</td>
+                <td>{{persona.apellidos}}</td>
+                <td>{{persona.fecha_de_nacimiento}}</td>
+                <td>{{persona.tipo_documento}}</td>
+                <td>{{persona.numero_documento}}</td>
+                <td>{{persona.estado}}</td>
+                <td class="kz-d-flex kz-gap--l">
+                    <button class="kz-button kz-button--primary kz-border-radius--l" (click)="modalEditar(ModalEditar, persona)"><i class="bi bi-pencil-square"></i> Detalles</button>
+                    <button class="kz-button kz-button--cancel kz-border-radius--l" (click)="modalDelete(persona)"><i class="bi bi-trash-fill"></i> Eliminar</button>
                 </td>
             </tr>
           </tbody>
@@ -73,3 +80,104 @@
       </div>
     </div>
 </div>
+
+<ng-template #ModalEditar let-modal>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Especialidades</h5>
+        <button type="button" class="kz-btn-close" data-dismiss="modal" aria-label="Close" (click)="modal.close()">
+          <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="kz-form-column">
+        <div class="kz-mb--2">
+          <label>Nombres:</label>
+          <input type="text" class="kz-input" [(ngModel)]="personaModal.nombres">
+        </div>
+        <div class="kz-mb--2">
+          <label>Fecha de Nacimiento:</label>
+          <input type="text" class="kz-input" [(ngModel)]="personaModal.fecha_de_nacimiento">
+        </div>
+        <div class="kz-mb--2">
+          <label>Número Documento:</label>
+          <input type="text" class="kz-input" [(ngModel)]="personaModal.numero_documento">
+        </div>
+      </div>
+      <div class="kz-form-column">
+        <div class="kz-mb--2">
+          <label>Apellidos:</label>
+          <input type="text" class="kz-input" [(ngModel)]="personaModal.apellidos">
+        </div>
+        <div class="kz-mb--2">
+          <label>Tipo Documento:</label>
+          <input type="text" class="kz-input" [(ngModel)]="personaModal.tipo_documento">
+        </div>
+        <div class="kz-mb--2">
+          <label>Estado:</label>
+          <select class="kz-input" [(ngModel)]="personaModal.estado">
+            <option value="Activo" class="kz-head--xs">Activo</option> 
+            <option value="Inactivo" class="kz-head--xs">Inactivo</option> 
+          </select>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal-footer">
+      <button class="kz-button kz-button--primary kz-border-radius--l" (click)="actualizarPersona()">Guardar</button>
+      <button class="kz-button kz-button--cancel kz-border-radius--l" (click)="modal.close()">Cancelar</button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #ModalCrear let-modal>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Personas</h5>
+        <button type="button" class="kz-btn-close" data-dismiss="modal" aria-label="Close" (click)="modal.close()">
+          <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="kz-form-column">
+        <div class="kz-mb--2">
+          <label>Nombres:</label>
+          <input type="text" class="kz-input" [(ngModel)]="personaGuardar.nombres">
+        </div>
+        <div class="kz-mb--2">
+          <label>Fecha de Nacimiento:</label>
+          <input type="date" class="kz-input" [(ngModel)]="personaGuardar.fecha_de_nacimiento">
+        </div>
+        <div class="kz-mb--2">
+          <label>Número Documento:</label>
+          <input type="text" class="kz-input" [(ngModel)]="personaGuardar.numero_documento">
+        </div>
+      </div>
+
+      <div class="kz-form-column">
+        <div class="kz-mb--2">
+          <label>Apellidos:</label>
+          <input type="text" class="kz-input" [(ngModel)]="personaGuardar.apellidos">
+        </div>
+        <div class="kz-mb--2">
+          <label>Tipo Documento:</label>
+          <input type="text" class="kz-input" [(ngModel)]="personaGuardar.tipo_documento">
+        </div>
+        <div class="kz-mb--2">
+          <label>Estado:</label>
+          <select class="kz-input" [(ngModel)]="personaGuardar.estado">
+            <option value="Activo" class="kz-head--xs">Activo</option> 
+            <option value="Inactivo" class="kz-head--xs">Inactivo</option> 
+          </select>
+        </div>
+      </div>
+    </div>
+  
+    <div class="modal-footer">
+      <button class="kz-button kz-button--primary kz-border-radius--l" (click)="guardarPersona()">Guardar</button>
+      <button class="kz-button kz-button--cancel kz-border-radius--l" (click)="modal.close()">Cancelar</button>
+    </div>
+  </div>
+</ng-template>

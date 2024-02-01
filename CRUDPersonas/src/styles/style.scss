@@ -42,7 +42,14 @@
   font-weight: bold;
 }
 
-.kz-state-animation {
+.kz-state-animation-green {
+  display: inline-block;
+  border-radius: 50%;
+  color: #0B9C3C;
+  animation: parpadeo 1s infinite;
+}
+
+.kz-state-animation-red {
   display: inline-block;
   border-radius: 50%;
   color: #0B9C3C;
