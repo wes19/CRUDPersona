@@ -1,1 +1,75 @@
-<p>list-persona works!</p>
+<div class="kz-container-full">
+    <div class="kz-d-flex kz-flex-vertical-center kz-flex-horizontal-center kz-gap--l kz-mb--4">
+        <div class="kz-input--icon kz-w--40">
+          <input class="kz-input" type="text" placeholder="Buscar">
+          <i class="bi bi-search"></i>
+        </div>
+      
+        <div class="kz-btn-radio--group">
+          <div class="kz-btn-radio__item">
+            <input type="radio" id="grid" name="view" checked>
+            <label for="grid">
+              <i class="bi bi-grid"></i>
+            </label>
+          </div>
+          <div class="kz-btn-radio__item">
+            <input type="radio" id="list" name="view" atr="1">
+            <label for="list">
+              <i class="bi bi-list-ul"></i>
+            </label>
+          </div>
+        </div>
+    </div>
+    
+    <!--Cards--> 
+    <div class="kz-kamba">
+        <div class="kz-d-grid kz-col-s5--4 kz-col-s3--3 kz-col-s2--2 kz-col-s1--2 kz-col-t--2 kz-col--1 kz-gap--xl kz-mt--4">
+          <div class="kz-card">
+            <div class="kz-card__body">
+              <div class="kz-d-flex kz-flex-vertical-center kz-gap--l">
+                <img class="kz-img kz-img--circle kz-img--l" src="../assets/img/icons/user.svg" alt="Card image cap">
+                <div class="kz-d-flex kz-dir-vertical kz-gap--xs">
+                  <label class="kz-txt--l kz-font-bold">Nombre</label>
+                  <label class="kz-txt--m">Puesto</label> 
+                  <label class="kz-txt--m">celular</label>
+                  <span class="kz-chip kz-chip--green"><i class="bi bi-circle-fill kz-state-animation"></i> Disponible</span>
+                </div>
+              </div>
+            </div>
+            <div class="kz-card__footer">
+              <button class="kz-button kz-button--primary kz-border-radius--l"><i class="bi bi-pencil-square"></i> Detalles</button>
+            </div>
+          </div>  
+        </div>
+    </div>
+      
+    <!--Table--> 
+    <div>
+      <div class="kz-table-content">
+        <table class="kz-table">
+          <thead class="kz-table__head">
+            <tr>
+                <th>Nombre Completo</th>
+                <th>Puesto Laboral</th>
+                <th>Célular Laboral</th>
+                <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody class="kz-table__body">
+            <tr>
+                <td>Nombre</td>
+                <td>puesto</td>
+                <td>celular</td>
+                <td>Disponible</td>
+                <td>
+                    <a class="kz-text-decoration-none kz-link"> Detalles</a>
+                </td>
+                <td>
+                    <button class="kz-button kz-button--cancel kz-border-radius--l"><i class="bi bi-trash-fill"></i> Eliminar</button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

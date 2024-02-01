@@ -10,6 +10,11 @@
  .kz-position-rel{
   position: relative;
  }
+
+ //z-index
+ .z-index-3{
+  z-index: 3;
+ }
 // bordes
   .kz-border-bottom{
     border-bottom: 1px solid #6A6A6A;
@@ -260,7 +265,7 @@
     padding: 2.5rem;
   }
   .kz-p--6{
-    padding: 3rem;
+    padding: 3rem !important;
   }
   //- padding left
   .kz-pl--1{

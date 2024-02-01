@@ -95,3 +95,33 @@
     width: auto;
     height: 36px;
   }
+
+  // container img
+  .kz-container--img{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .kz-img--full{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-color: #00000036;
+  }
+
+  .kz-color-opacity{
+    width: 100%;
+    height: 100vh;
+    background-color: #0000005e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
